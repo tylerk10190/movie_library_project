@@ -222,7 +222,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\201909101859433_newMigration.cs" />
     <Compile Include="Migrations\201909101859433_newMigration.Designer.cs">
       <DependentUpon>201909101859433_newMigration.cs</DependentUpon>
@@ -230,11 +229,6 @@
     <Compile Include="Migrations\201909102034339_addingMoviesToDatabase.cs" />
     <Compile Include="Migrations\201909102034339_addingMoviesToDatabase.Designer.cs">
       <DependentUpon>201909102034339_addingMoviesToDatabase.cs</DependentUpon>
-=======
-    <Compile Include="Migrations\201909101857386_InitialMigrations.cs" />
-    <Compile Include="Migrations\201909101857386_InitialMigrations.Designer.cs">
-      <DependentUpon>201909101857386_InitialMigrations.cs</DependentUpon>
->>>>>>> d17ddf366c9f2a9c4b9e065f6d32f1134eafaa1b
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />

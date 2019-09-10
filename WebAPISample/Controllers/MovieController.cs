@@ -54,7 +54,7 @@ namespace WebAPISample.Controllers
         public void Delete(int id)
         {
             // Delete movie from db logic
-            var movieToDelete = db.Movies.Where(m => m.MovieId == id).Single();
+            var movieToDelete = db.Movies.Find(id);
             db.Movies.Remove(movieToDelete);
             db.SaveChanges();
         }
