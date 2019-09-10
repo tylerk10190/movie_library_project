@@ -10,6 +10,13 @@ namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
+
+        public ApplicationDbContext db;
+
+        public MovieController()
+        {
+            db = new ApplicationDbContext();
+        }
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -23,13 +30,16 @@ namespace WebAPISample.Controllers
             // Retrieve movie by id from db logic
             return "value";
         }
-
+        [HttpPost]
         // POST api/values
         public void Post([FromBody]Movie value)
         {
+            db.Movies.Add(value);
+            db.SaveChanges();
             // Create movie in db logic
-        }
 
+        }
+        [HttpPut]
         // PUT api/values/5
         public void Put(int id, [FromBody]string value)
         {
