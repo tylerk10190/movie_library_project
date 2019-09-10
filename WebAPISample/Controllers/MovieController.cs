@@ -41,15 +41,22 @@ namespace WebAPISample.Controllers
         }
         [HttpPut]
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Movie value)
         {
-            // Update movie in db logic
+            var movieToEdit = db.Movies.Find(id);
+            movieToEdit.Title = value.Title;
+            movieToEdit.Genre = value.Genre;
+            movieToEdit.Director = value.Director;
+            db.SaveChanges();
         }
 
+        [HttpDelete]
         // DELETE api/values/5
         public void Delete(int id)
         {
-            // Delete movie from db logic
+            var movieToDelete = db.Movies.Find(id);
+            db.Movies.Remove(movieToDelete);
+            db.SaveChanges();
         }
     }
 
