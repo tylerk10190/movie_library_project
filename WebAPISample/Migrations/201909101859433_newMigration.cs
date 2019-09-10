@@ -3,7 +3,7 @@ namespace WebAPISample.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class newMigration : DbMigration
     {
         public override void Up()
         {
@@ -13,6 +13,7 @@ namespace WebAPISample.Migrations
                     {
                         MovieId = c.Int(nullable: false, identity: true),
                         Title = c.String(),
+                        Genre = c.String(),
                         Director = c.String(),
                     })
                 .PrimaryKey(t => t.MovieId);

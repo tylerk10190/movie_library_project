@@ -222,6 +222,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909101859433_newMigration.cs" />
+    <Compile Include="Migrations\201909101859433_newMigration.Designer.cs">
+      <DependentUpon>201909101859433_newMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909102034339_addingMoviesToDatabase.cs" />
+    <Compile Include="Migrations\201909102034339_addingMoviesToDatabase.Designer.cs">
+      <DependentUpon>201909102034339_addingMoviesToDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -326,6 +335,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Get.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -338,6 +348,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909101859433_newMigration.resx">
+      <DependentUpon>201909101859433_newMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909102034339_addingMoviesToDatabase.resx">
+      <DependentUpon>201909102034339_addingMoviesToDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
