@@ -356,16 +356,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201909101859433_newMigration.resx">
       <DependentUpon>201909101859433_newMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909102034339_addingMoviesToDatabase.resx">
       <DependentUpon>201909102034339_addingMoviesToDatabase.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Migrations\201909101857386_InitialMigrations.resx">
-      <DependentUpon>201909101857386_InitialMigrations.cs</DependentUpon>
->>>>>>> d17ddf366c9f2a9c4b9e065f6d32f1134eafaa1b
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
