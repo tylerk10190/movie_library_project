@@ -11,7 +11,8 @@ namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
-        ApplicationDbContext db;
+        public ApplicationDbContext db;
+        
         public MovieController()
         {
             db = new ApplicationDbContext();
@@ -31,20 +32,21 @@ namespace WebAPISample.Controllers
             var moviesInList = db.Movies.Where(m => m.MovieId == id).Single();
             return "value";
         }
-
+        [HttpPost]
         // POST api/values
         public void Post([FromBody]Movie value)
         {
+            db.Movies.Add(value);
+            db.SaveChanges();
             // Create movie in db logic
-
         }
-
+        
         // PUT api/values/5
         [HttpPut]
         public void Put(int id, [FromBody]string value)
         {
             // Update movie in db logic
-            //var movieToEdit = db.Movies.Where(m => m.MovieId == )
+            var movieToEdit = db.Movies.Where(m => m.MovieId == id).Select();
         }
 
         // DELETE api/values/5
