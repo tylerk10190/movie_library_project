@@ -28,3 +28,8 @@
 
     $('#my-form').submit( processForm );
 })(jQuery);
+
+
+function getListOfMovies() {
+    var listMovies = 
+}
