@@ -18,19 +18,19 @@ namespace WebAPISample.Controllers
             db = new ApplicationDbContext();
         }
         // GET api/values
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
             // Retrieve all movies from db logic
-            var movies = db.Movies.ToArray();
-            return new string[movies.Length];
+            var movies = db.Movies.ToList();
+            return Ok(movies);
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
             // Retrieve movie by id from db logic
-            var moviesInList = db.Movies.Where(m => m.MovieId == id).Single();
-            return "value";
+            var movie = db.Movies.Find(id);
+            return Ok(movie);
         }
         [HttpPost]
         // POST api/values
@@ -43,10 +43,14 @@ namespace WebAPISample.Controllers
         
         // PUT api/values/5
         [HttpPut]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Movie value)
         {
             // Update movie in db logic
-            var movieToEdit = db.Movies.Where(m => m.MovieId == id).Select();
+            var movieToEdit = db.Movies.Find(id);
+            movieToEdit.Title = value.Title;
+            movieToEdit.Genre = value.Genre;
+            movieToEdit.Director = value.Director;
+            db.SaveChanges();
         }
 
         // DELETE api/values/5
