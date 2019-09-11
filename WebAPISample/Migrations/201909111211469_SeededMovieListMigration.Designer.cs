@@ -7,13 +7,13 @@ namespace WebAPISample.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialMigrations : IMigrationMetadata
+    public sealed partial class SeededMovieListMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigrations));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SeededMovieListMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909101857386_InitialMigrations"; }
+            get { return "201909111211469_SeededMovieListMigration"; }
         }
         
         string IMigrationMetadata.Source
