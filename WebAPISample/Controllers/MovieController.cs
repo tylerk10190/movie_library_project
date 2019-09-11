@@ -40,9 +40,8 @@ namespace WebAPISample.Controllers
             db.Movies.Add(value);
             db.SaveChanges();
         }
-        
-        // PUT api/values/5
-        [HttpPut]
+
+        // PUT api/values/5 
         public void Put(int id, [FromBody]Movie value)
         {
             // Update movie in db logic
@@ -57,7 +56,6 @@ namespace WebAPISample.Controllers
         [HttpDelete]
         public void Delete(int id)
         {
-            // Delete movie from db logic
             var movieToDelete = db.Movies.Find(id);
             db.Movies.Remove(movieToDelete);
             db.SaveChanges();
