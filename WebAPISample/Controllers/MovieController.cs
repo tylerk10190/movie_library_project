@@ -41,9 +41,10 @@ namespace WebAPISample.Controllers
             db.SaveChanges();
         }
 
-        // PUT api/values/5
+        // PUT api/values/5 
         public void Put(int id, [FromBody]Movie value)
         {
+            // Update movie in db logic
             var movieToEdit = db.Movies.Find(id);
             movieToEdit.Title = value.Title;
             movieToEdit.Genre = value.Genre;

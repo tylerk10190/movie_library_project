@@ -3,11 +3,9 @@ namespace WebAPISample.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-<<<<<<< HEAD:WebAPISample/Migrations/201909101859433_newMigration.cs
-    public partial class newMigration : DbMigration
-=======
+
+
     public partial class InitialMigrations : DbMigration
->>>>>>> d17ddf366c9f2a9c4b9e065f6d32f1134eafaa1b:WebAPISample/Migrations/201909101857386_InitialMigrations.cs
     {
         public override void Up()
         {
