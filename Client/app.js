@@ -1,7 +1,6 @@
 // POST action -- add new movie to list //
 (function($){
     function processForm( e ){
-        console.log("in post method");
         var dict = {
         	Title : this["title"].value,
         	Director: this["director"].value,
@@ -30,6 +29,26 @@
 })(jQuery);
 
 
-function getListOfMovies() {
-    var listMovies = 
-}
+(function($){
+    function makeTable(){
+
+
+        $.ajax({
+            url: 'https://localhost:44352/api/movie',
+            dataType: 'json',
+            type: 'get',
+            contentType: 'application/json',
+            success: function( data, textStatus, jQxhr ){
+                console.log(data);
+                $('#response pre').html( data );
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+    }
+
+    makeTable();
+})(jQuery);
+        
+
