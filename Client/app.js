@@ -15,7 +15,7 @@
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function( data, textStatus, jQxhr ){
-                $('#response pre').html( data );
+                $("#my-table").append("<tr><td>" + dict["Title"] +"</td>" +"<td>" + dict["Director"] + "</td>" + "<td>" + dict["Genre"] + "</td>" +"</tr>")
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 console.log( errorThrown );
@@ -26,10 +26,11 @@
     }
 
     $('#my-form').submit( processForm );
-})(jQuery);
 
 
 (function($){
+
+
     function makeTable(){
 
 
@@ -39,7 +40,12 @@
             type: 'get',
             contentType: 'application/json',
             success: function( data, textStatus, jQxhr ){
-                console.log(data);
+                for(let el in data)
+                {
+                    $("#my-table").append("<tr><td>" + data[el].Title +"</td>" +"<td>" + data[el].Director + "</td>" + "<td>" + data[el].Genre + "</td>" +"</tr>")
+                    console.log(data[el]);
+                }
+
                 $('#response pre').html( data );
             },
             error: function( jqXhr, textStatus, errorThrown ){
