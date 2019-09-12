@@ -3,7 +3,8 @@
 <head>
     <title>jQuery AJAX POST Form</title>
     <meta charset="utf-8">
-</head>
+<!--     <link rel="stylesheet" type="text/css" href="movielibrary.css"></li>
+ --></head>
 <body>
 
 <div id="response">
@@ -27,6 +28,9 @@
 		<th>Director</th>
 		<th>Genre</th>
 	</tr>
+
+	<tr id = "details-row">
+	</tr>
 </table>
 </form>
 	
@@ -38,9 +42,15 @@
     <button type="submit">Submit</button>
 </form>
 <!-- <form method="get" action="https://localhost:44352/api/movie/${id}"><button type="submit">Details</button></form> -->
+<template>
+	
+</template>
+<button id="submit-button">
 
-
+</button>
+	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="./app.js" ></script>
+<script src="/mustache/mustache.js"></script>
 </body>
 </html>

@@ -29,7 +29,6 @@
 
     function makeTable(){
 
-
         $.ajax({
             url: 'https://localhost:44352/api/movie',
             dataType: 'json',
@@ -38,7 +37,12 @@
             success: function( data ){
                 for(let el in data)
                 {
-                    $("#my-table").append(`<tr id=${data[el].MovieId}><td contenteditable id= "Title${data[el].MovieId}">${data[el].Title}</td><td contenteditable id= "Director${data[el].MovieId}"> ${data[el].Director}</td><td contenteditable id = "Genre${data[el].MovieId}"> ${data[el].Genre}</td><td><span onclick="FindOneMovie(${data[el].MovieId})">Details</span></td><td><span onclick="EditMovie(${data[el].MovieId})">Submit Changes</span></td></tr>`)
+                    $("#my-table").append(`<tr id=${data[el].MovieId}>
+                        <td contenteditable id= "Title${data[el].MovieId}">${data[el].Title}</td>
+                        <td contenteditable id= "Director${data[el].MovieId}"> ${data[el].Director}</td>
+                        <td contenteditable id = "Genre${data[el].MovieId}"> ${data[el].Genre}</td>
+                        <td><button type = "button" onclick="FindOneMovie(${data[el].MovieId})">Details</button></td>
+                        <td><button type = "button" onclick="EditMovie(${data[el].MovieId})">Submit Changes</button></td></tr>`)
                     console.log(data[el]);
                 }
 
@@ -56,6 +60,7 @@
 })(jQuery);
 
  function FindOneMovie(id){
+       
         var obj = {
             Title : document.getElementById(`Title${id}`).innerText,
             Director: document.getElementById(`Director${id}`).innerText,
@@ -68,11 +73,12 @@
             contentType: 'application/json',
             data: JSON.stringify(obj),
             success: function( data ){
-                 $("#details-table").append("<tr>");
-                     $("#details-table").append(`<td>${data.Title}</td><td>${data.Director}</td><td>${data.Genre}</td>`)
-                     console.log(data[el].Title);
-                $("#details-table").append("</tr>");
-                $('#response pre').html( data );
+                //  $("#details-table").append("<tr>");
+                //      $("#details-table").append(`<td>${data.Title}</td><td>${data.Director}</td><td>${data.Genre}</td>`)
+                //      // console.log(data[el].Title);
+                // $("#details-table").append("</tr>");
+                // // $('#response pre').html( data );
+                document.getElementById('details-row').innerHTML = (`<td>${data.Title}</td><td>${data.Director}</td><td>${data.Genre}</td>`)
             },
             error: function( errorThrown ){
                 console.log( errorThrown );
@@ -104,5 +110,6 @@
             }
         });
     }
-        
+       
+
 
