@@ -73,11 +73,6 @@
             contentType: 'application/json',
             data: JSON.stringify(obj),
             success: function( data ){
-                //  $("#details-table").append("<tr>");
-                //      $("#details-table").append(`<td>${data.Title}</td><td>${data.Director}</td><td>${data.Genre}</td>`)
-                //      // console.log(data[el].Title);
-                // $("#details-table").append("</tr>");
-                // // $('#response pre').html( data );
                 document.getElementById('details-row').innerHTML = (`<td>${data.Title}</td><td>${data.Director}</td><td>${data.Genre}</td>`)
             },
             error: function( errorThrown ){
