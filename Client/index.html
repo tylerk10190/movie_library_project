@@ -1,6 +1,9 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
+    <title>jQuery AJAX POST Form</title>
     <title>Movie Library</title>
     <meta charset="utf-8">
 <!--     <link rel="stylesheet" type="text/css" href="movielibrary.css"></li>
@@ -9,20 +12,11 @@
     <div style="background-image: url(https://img.freepik.com/free-photo/abstract-background-with-low-poly-design_1048-8478.jpg?size=626&ext=jpg); background-size: cover; background-repeat: repeat;">
 </head>
 <body>
+
 <div id="response">
     <pre></pre>
 </div>
-<table border="1 px solid black" width="75%" id="my-table">
-	<tr>
-		<th>Title</th>
-		<th>Director</th>
-		<th>Genre</th>
-		<th>Details</th>
-		<th>Edit</th>
-	</tr>
-	<button formmethod="get"></button>
 </table>
-<H4>Details</H4>
 <div class="container">
 <div class="row">
 	<div class="col-sm-12">
@@ -64,6 +58,7 @@
 	<div class="col-sm-1"></div>
 	<div class="col-sm-10">
 <form id = "search-form">
+	<table border="1 px solid black" width="75%" id="details-table">
 	<table border="1 px solid black" width="100%" id="details-table" style="background-color: white; opacity: 0.8">
 	<tr>
 		<th style="text-align: center">Title</th>
@@ -78,6 +73,8 @@
 	</tr>
 </table>
 </form>
+
+<form id="my-form">
 	</div>
 	<div class="col-sm-1"></div>
 </div>
@@ -98,6 +95,7 @@
     <input type="text" name="title" placeholder="Title" />
     <input type="text" name="director" placeholder="Director" />
     <input type="text" id="genre" name="genre" placeholder="Genre" />
+    <button type="submit">Submit</button>
     <button type="submit" style="position: center">Add Movie!</button>
 	</div>
 	<div class="col-sm-3"></div>
@@ -105,7 +103,7 @@
 </form>
 <!-- <form method="get" action="https://localhost:44352/api/movie/${id}"><button type="submit">Details</button></form> -->
 <template>
-	
+
 </template>
 <button id="submit-button">
 
@@ -113,10 +111,12 @@
 <br><br><br><br>
 
 </button>
-	
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="./app.js" ></script>
 <script src="/mustache/mustache.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

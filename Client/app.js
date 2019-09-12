@@ -41,12 +41,11 @@
                         <td contenteditable id= "Title${data[el].MovieId}">${data[el].Title}</td>
                         <td contenteditable id= "Director${data[el].MovieId}"> ${data[el].Director}</td>
                         <td contenteditable id = "Genre${data[el].MovieId}"> ${data[el].Genre}</td>
-                        <td><button type = "button" onclick="FindOneMovie(${data[el].MovieId})">Details</button></td>
+                        <td><button type = "button" onclick="FindOneMovie(${data[el].MovieId})">Push Me</button></td>
                         <td><button type = "button" onclick="EditMovie(${data[el].MovieId})">Submit Changes</button></td></tr>`)
                     console.log(data[el]);
                 }
 
-                $('#response pre').html( data );
             },
             error: function( errorThrown ){
                 console.log( errorThrown );
