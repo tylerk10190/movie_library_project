@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>jQuery AJAX POST Form</title>
+    <title>Movie Library</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <div style="background-image: url(https://img.freepik.com/free-photo/abstract-background-with-low-poly-design_1048-8478.jpg?size=626&ext=jpg); background-size: cover; background-repeat: repeat;">
 </head>
 <body>
 
 <div id="response">
     <pre></pre>
 </div>
-<table border="1 px solid black" width="75%" id="my-table">
-	<tr>
-		<th>Title</th>
-		<th>Director</th>
-		<th>Genre</th>
-		<th>Details</th>
-		<th>Edit</th>
-	</tr>
-</table>
-<H4>Details</H4>
+<div class="jumbotron text-center" style="color:gray" style="opacity: 0.4">
+	<h1>Welcome To Movie Library</h1>
+	<h8>Enjoy editing and adding to the movies on this list.</h8>
+</div>
+<div class = "row">
+<div class="col-sm-2"></div>
+<div class="col-sm-2">
+	<div class="container text-center">
+		<table border="1 px solid black" width="75%" id="my-table" style="background-color: white">
+			<tr>
+				<th style="text-align: center">Title</th>
+				<th style="text-align: center">Director</th>
+				<th style="text-align: center">Genre</th>
+				<th style="text-align: center">Details</th>
+				<th style="text-align: center">Edit</th>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="col-sm-8"></div>
+</div>
+<br><br><br><br>
+<div class="row">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
+		<H4 style = "color: white">Details</H4>
+	</div>
+</div>
+<div class="container text-center">
 <form id = "search-form">
-	<table border="1 px solid black" width="75%" id="details-table">
+	<table border="1 px solid black" width="75%" id="details-table" style="background-color: white">
 	<tr>
-		<th>Title</th>
-		<th>Director</th>
-		<th>Genre</th>
+		<th style="text-align: center">Title</th>
+		<th style="text-align: center">Director</th>
+		<th style="text-align: center">Genre</th>
 	</tr>
 </table>
 </form>
-	
-<form id="my-form">
-	<H4>Add A Movie</H4>
+</div>
+<br><br><br><br>
+<div class="container" style="color: black">	
+<form id="my-form" border="1 px solid black">
+	<H4 style = "color: white">Add A Movie</H4>
     <input type="text" name="title" placeholder="Title" />
     <input type="text" name="director" placeholder="Director" />
     <input type="text" id="genre" name="genre" placeholder="Genre" />
     <button type="submit">Submit</button>
 </form>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="./app.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 </html>
