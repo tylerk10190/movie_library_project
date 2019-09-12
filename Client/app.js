@@ -56,11 +56,10 @@
 })(jQuery);
 
  function FindOneMovie(id){
-
         var obj = {
-            Title : this["title"],
-            Director: this["director"],
-            Genre: this["genre"]
+            Title : document.getElementById(`Title${id}`).innerText,
+            Director: document.getElementById(`Director${id}`).innerText,
+            Genre: document.getElementById(`Genre${id}`).innerText
         };
         $.ajax({
             url: `https://localhost:44352/api/movie/${id}`,
@@ -70,19 +69,8 @@
             data: JSON.stringify(obj),
             success: function( data ){
                  $("#details-table").append("<tr>");
-                    for(let el in data)
-                {
-                    if(el == data.MovieId)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                     $("#details-table").append(`<td>${data[el]}</td>`)
-                     console.log(data[el]);
-                    }
-                    
-                }
+                     $("#details-table").append(`<td>${data.Title}</td><td>${data.Director}</td><td>${data.Genre}</td>`)
+                     console.log(data[el].Title);
                 $("#details-table").append("</tr>");
                 $('#response pre').html( data );
             },
