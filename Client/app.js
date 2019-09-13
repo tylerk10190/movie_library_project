@@ -13,7 +13,8 @@
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function( data ){
-                $("#my-table").append("<tr><td>" + dict["Title"] +"</td>" +"<td>" + dict["Director"] + "</td>" + "<td>" + dict["Genre"] + "</td>" +"</tr>")
+                $("#my-table tr").remove()
+                makeTable();
             },
             error: function( errorThrown ){
                 console.log( errorThrown );
@@ -36,8 +37,7 @@
             success: function( data ){
                 for(let el in data)
                 {
-                    $("#my-table").append(`<tr id=${data[el].MovieId}><td contenteditable id= "Title${data[el].MovieId}">${data[el].Title}</td><td contenteditable id= "Director${data[el].MovieId}"> ${data[el].Director}</td><td contenteditable id = "Genre${data[el].MovieId}"> ${data[el].Genre}</td><td><span onclick="FindOneMovie(${data[el].MovieId})">Details</span></td><td><span onclick="EditMovie(${data[el].MovieId})">Submit Changes</span></td></tr>`)
-                    console.log(data[el]);
+                    $("#my-table").append(`<tr id=${data[el].MovieId}><td contenteditable id= "Title${data[el].MovieId}">${data[el].Title}</td><td contenteditable id= "Director${data[el].MovieId}"> ${data[el].Director}</td><td contenteditable id = "Genre${data[el].MovieId}"> ${data[el].Genre}</td><td><span onclick="FindOneMovie(${data[el].MovieId})">Push Me!</span></td><td><span onclick="EditMovie(${data[el].MovieId})">Submit Changes</span></td></tr>`)
                 }
 
                 $('#response pre').html( data );
@@ -66,7 +66,6 @@
             contentType: 'application/json',
             data: JSON.stringify(obj),
             success: function( data ){
-                console.log('hi')
                 document.getElementById('details-row').innerHTML = `<td>${data.Title}</td><td>${data.Director}</td><td>${data.Genre}</td>`;
             },
             error: function( errorThrown ){
