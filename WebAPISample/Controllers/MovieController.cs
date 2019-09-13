@@ -41,7 +41,7 @@ namespace WebAPISample.Controllers
             db.SaveChanges();
         }
 
-        // PUT api/values/5 
+        // PUT api/value/5 
         public void Put(int id, [FromBody]Movie value)
         {
             // Update movie in db logic
